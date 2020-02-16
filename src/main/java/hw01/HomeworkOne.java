@@ -7,7 +7,7 @@ import java.util.*;
 public class HomeworkOne {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int randomNumber = (int) (10 * Math.random());
+        int randomNumber = (int) (100 * Math.random());
 
         int[] playerNumber = new int[100];
 
@@ -20,10 +20,8 @@ public class HomeworkOne {
             System.out.println("Enter player number between 0 to 100: ");
             playerNumber[infinitive] = sc.nextInt();
             count++;
-            if (playerNumber[infinitive] != (int) playerNumber[infinitive]) {
-                System.out.println("It is not a number.Please, try again.");
-            }
-             else if(playerNumber[infinitive] < randomNumber) {
+
+             if(playerNumber[infinitive] < randomNumber) {
                 System.out.println("Your number is too small. Please, try again.");
             } else if (playerNumber[infinitive] > randomNumber) {
                 System.out.println("Your number is too big. Please, try again.");
