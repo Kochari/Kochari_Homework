@@ -2,7 +2,7 @@ package hw01;
 
 import java.util.Random;
 import java.util.Scanner;
-import java.util.*;
+
 
 public class HomeworkOne {
     public static void main(String[] args) {
