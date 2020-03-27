@@ -40,12 +40,12 @@ public class Main {
         //    }
 
 
-           karleone.deleteChild(0);//delete child by index
+        //   karleone.deleteChild(0);//delete child by index
         // karleone.deleteChild(1);//delete child by index
         // karleone.deleteChild(fredo);//delete child by object
         //  karleone.deleteChild(connie);//delete child by object
         //System.out.println(karleone);
-        //   System.out.println(karleone.countFamily());//count family  member(s)
+          System.out.println(karleone.countFamily());//count family  member(s)
 
         for (Family family : karleone.getAll(karleone)) {
             System.out.println(family.getPet());
