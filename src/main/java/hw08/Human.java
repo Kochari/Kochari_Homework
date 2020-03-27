@@ -1,5 +1,6 @@
 package hw08;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class Human {
@@ -8,7 +9,7 @@ public class Human {
     private int year;
     private int iq;
     private Pet pet;
-    private String schedule[][];
+    private Map schedule;
     private Human mother;
     private Human father;
 
@@ -77,7 +78,7 @@ public class Human {
         return name;
     }
 
-    public String[][] getSchedule() {
+    public Map getSchedule() {
         return schedule;
     }
 
@@ -133,7 +134,7 @@ public class Human {
         this.father = father;
     }
 
-    public void setSchedule(String[][] schedule) {
+    public void setSchedule(Map schedule) {
         this.schedule = schedule;
     }
     @Override

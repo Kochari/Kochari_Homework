@@ -2,6 +2,7 @@ package hw08;
 
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Set;
 
 public abstract class Pet {
     Pet pet;
@@ -9,7 +10,7 @@ public abstract class Pet {
     private String nickname;
     private int age;
     private int trickLevel;
-    private String habits[];
+    private Set habits;
 
 
     @Override
@@ -19,25 +20,22 @@ public abstract class Pet {
         Pet pet1 = (Pet) o;
         return age == pet1.age &&
                 trickLevel == pet1.trickLevel &&
-                pet.equals(pet1.pet) &&
-                nickname.equals(pet1.nickname) &&
-                Arrays.equals(habits, pet1.habits);
+                Objects.equals(pet, pet1.pet) &&
+                species == pet1.species &&
+                Objects.equals(nickname, pet1.nickname) &&
+                Objects.equals(habits, pet1.habits);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(pet,  nickname, age, trickLevel);
-        result = 31 * result + Arrays.hashCode(habits);
-        return result;
+        return Objects.hash(pet, species, nickname, age, trickLevel, habits);
     }
 
-    public Pet(String nickname, int age, int trickLevel, String habits[]) {
-
-
+    public Pet(String nickname, int age, int trickLevel, Set habit) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
-        this.habits = habits;
+        this.habits = habit;
     }
 
     public Pet(String nickname) {
@@ -56,17 +54,16 @@ public abstract class Pet {
             System.out.println("I have a" + species + " he is" + age + " years old, he is" + "almost not sly");
         }
     }
-abstract void respond(String nickname);
+
+    abstract void respond(String nickname);
 
     public void foul() {
         System.out.println("I need to cover it up");
     }
 
     public String toString() {
-        return "Pet{" + ", nickname=" + nickname + '\'' + ", age=" + age + ", trickLevel=" + trickLevel + ", habits=" + Arrays.toString(habits) + '\'' + '}';
+        return "Pet{" + ", nickname=" + nickname + '\'' + ", age=" + age + ", trickLevel=" + trickLevel + ", habits=" + habits + '\'' + '}';
     }
-
-
 
     public String getNickname() {
         return nickname;
@@ -85,56 +82,98 @@ abstract void respond(String nickname);
         return trickLevel;
     }
 
-    public String[] getHabits() {
+    public Set getHabits() {
         return habits;
     }
 
-    public class Dog extends Pet {
+    public static class Dog extends Pet {
+        Species species;
+
+        public Dog(String nickname, int age, int trickLevel, Set habit) {
+            super(nickname, age, trickLevel, habit);
+            this.setSpecies(Species.DOG);
+        }
 
         @Override
         void respond(String nickname) {
-            System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
+            System.out.printf("Hello, owner. I am %s and I do wooff ", nickname);
         }
 
         @Override
         public void foul() {
-            super.foul();
+            System.out.println("I need to cover it up");
+        }
+
+        @Override
+        protected void setSpecies(Species dog) {
+
         }
     }
 
+    protected abstract void setSpecies(Species dog);
+
     public class DomesticCat extends Pet {
+        public DomesticCat(String nickname, int age, int trickLevel, Set habit) {
+            super(nickname, age, trickLevel, habit);
+            this.setSpecies(Species.DOMESTICCAT);
+        }
+
         @Override
         void respond(String nickname) {
-            System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
+            System.out.printf("Hello, owner. I am %s and I need more sleep ", nickname);
         }
 
         @Override
         public void foul() {
-            super.foul();
+            System.out.println("I need to cover it up");
+        }
+
+        @Override
+        protected void setSpecies(Species dog) {
+
         }
     }
 
     public class Fish extends Pet {
+        public Fish(String nickname, int age, int trickLevel, Set habit) {
+            super(nickname, age, trickLevel, habit);
+            this.setSpecies(Species.FISH);
+        }
+
         @Override
         void respond(String nickname) {
-            System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
+            System.out.printf("Hello, owner. I am %s and I can swim", nickname);
         }
 
         @Override
         public void foul() {
-            super.foul();
+            System.out.println("I need to cover it up");
         }
 
-        public class RoboCat extends Pet {
-            @Override
-            void respond(String nickname) {
-                System.out.println("Hello, owner. I am " + nickname + ". I miss you!");
-            }
+        @Override
+        protected void setSpecies(Species fish) {
+        }
+    }
 
-            @Override
-            public void foul() {
-                super.foul();
-            }
+    public class RoboCat extends Pet {
+        public RoboCat(String nickname, int age, int trickLevel, Set habit) {
+            super(nickname, age, trickLevel, habit);
+            this.setSpecies(Species.ROBOCAT);
+        }
+
+        @Override
+        void respond(String nickname) {
+            System.out.printf("Hello, owner. I am %s and I play music ", nickname);
+        }
+
+        @Override
+        public void foul() {
+            System.out.println("I need to cover it up");
+        }
+
+        @Override
+        protected void setSpecies(Species RoboCat) {
         }
     }
 }
+
