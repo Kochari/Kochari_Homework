@@ -22,33 +22,32 @@ public class Main {
         habit.add("sleep");
         Human father = new Human("Vito ", "Karleone");
         Human mother = new Human("Jane ", "Karleone");
-        Human[] child = new Human[0];
         Human fredo = new Human("Fredo", "Karleone", 1996);
         Human connie = new Human("Connie", "Karleone", 1999);
         Human michael = new Human("Michael", "Karleone", 1998);
 
         Pet dog = new Pet.Dog("Rock", 5, 45, habit);
         fredo.setSchedule(schedule);
-        Family karleone = new Family(father, mother, Arrays.asList(child));
+        Family karleone = new Family(father, mother);
         karleone.addPet(dog);
-        karleone.addChild(fredo);// add child
-//        karleone.addChild(connie);
-//        karleone.addChild(michael);
-      // karleone.setPet((Set<Pet>) dog);
 
-     //   for(Family family : karleone.getAll(karleone)) {
-       //     System.out.println(family.getFather().getName());
-    //    }
+      karleone.addChild(connie);
+      karleone.addChild(michael);
 
 
+        //   for(Family family : karleone.getAll(karleone)) {
+        //     System.out.println(family.getFather().getName());
+        //    }
 
-        //    karleone.deleteChild(0);//delete child by index
+
+           karleone.deleteChild(0);//delete child by index
         // karleone.deleteChild(1);//delete child by index
-         // karleone.deleteChild(fredo);//delete child by object
+        // karleone.deleteChild(fredo);//delete child by object
         //  karleone.deleteChild(connie);//delete child by object
         //System.out.println(karleone);
         //   System.out.println(karleone.countFamily());//count family  member(s)
-        for(Family family : karleone.getAll(karleone)) {
+
+        for (Family family : karleone.getAll(karleone)) {
             System.out.println(family.getPet());
         }
     }

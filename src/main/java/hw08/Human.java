@@ -14,7 +14,6 @@ public class Human {
     private Human father;
 
 
-
     public Human(String name, String surname, int year) {
         this.name = name;
         this.surname = surname;
@@ -38,10 +37,12 @@ public class Human {
         this.mother = mother;
         this.pet = pet;
     }
+
     public void greetPet() {
 
         System.out.println("Hello" + getPet().getNickname());
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -71,7 +72,7 @@ public class Human {
 
     @Override
     protected void finalize() throws Throwable {
-        System.out.println("Human class was deleted");
+        System.out.println("successfully garbage collected");
     }
 
     public String getName() {
@@ -138,6 +139,7 @@ public class Human {
     public void setSchedule(Map schedule) {
         this.schedule = schedule;
     }
+
     @Override
     public String toString() {
 
@@ -154,14 +156,15 @@ public class Human {
     }
 }
 
-class Man extends Human implements HumanCreator{
-    public void  repairCar( boolean repairCar){
+class Man extends Human implements HumanCreator {
+    public void repairCar(boolean repairCar) {
         if (repairCar) {
             System.out.println("Car was repaired");
         } else {
             System.out.println("Car does not repaired");
         }
     }
+
     @Override
     public void greetPet() {
         super.greetPet();
@@ -170,20 +173,21 @@ class Man extends Human implements HumanCreator{
 
     @Override
     public Human bornChild(Man childInterface) {
-        
-return childInterface;
+
+        return childInterface;
     }
 }
 
 class Woman extends Human {
-public void makeup(boolean checkMakeup) {
+    public void makeup(boolean checkMakeup) {
 
-    if (checkMakeup) {
-        System.out.println("Woman already made up");
-    } else {
-        System.out.println("Woman does not make up");
+        if (checkMakeup) {
+            System.out.println("Woman already made up");
+        } else {
+            System.out.println("Woman does not make up");
+        }
     }
-}
+
     @Override
     public void greetPet() {
         super.greetPet();

@@ -66,9 +66,9 @@ public class Human {
         this.surname = surname;
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Human class was deleted");
+    protected void finalize() throws Throwable
+    {
+        System.out.println( " successfully garbage collected");
     }
 
     public String getName() {

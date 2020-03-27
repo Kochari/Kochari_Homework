@@ -17,6 +17,11 @@ public class Main {
         schedule[5][1] = "play football";
         schedule[6][0] = DayOfWeek.Saturday.name();
         schedule[6][1] = "do not go out";
+        for (int i=0; i<10; i++){
+            new Human();
+            new Pet();
+            new Family();
+        }
 
         String[] habit = new String[]{"eat", "drink", "sleep"};
         Human father = new Human("Vito ", "Karleone");
@@ -39,5 +44,6 @@ public class Main {
         //  karleone.deleteChild(connie);//delete child by object
         System.out.println(karleone);
         System.out.println(karleone.countFamily());//count family  member(s)
+        System.gc();
     }
 }

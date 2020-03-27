@@ -16,10 +16,14 @@ public class Family {
         this.pet = pet;
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Family class was deleted");
+    public Family() {
+
     }
+    protected void finalize() throws Throwable
+    {
+        System.out.println( " successfully garbage collected");
+    }
+
 
     hw05.Family family;
     public Family(Human father, Human mother, Pet pet) {

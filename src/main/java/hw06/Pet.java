@@ -98,8 +98,9 @@ public class Pet {
     }
 
     @Override
-    protected void finalize() throws Throwable {
-        System.out.println("Pet class was deleted");
+    protected void finalize() throws Throwable
+    {
+        System.out.println(" successfully garbage collected");
     }
 
     public int getTrickLevel() {
