@@ -122,6 +122,7 @@ public class Human {
         return mother;
     }
 
+
     public void setMother(Human mother) {
         this.mother = mother;
     }

@@ -30,10 +30,11 @@ public class Main {
         Pet dog = new Pet.Dog("Rock", 5, 45, habit);
         fredo.setSchedule(schedule);
         Family karleone = new Family(father, mother, Arrays.asList(child));
-//        karleone.addChild(fredo);// add child
+        karleone.addPet(dog);
+        karleone.addChild(fredo);// add child
 //        karleone.addChild(connie);
 //        karleone.addChild(michael);
-       karleone.setPet((Set<Pet>) dog);
+      // karleone.setPet((Set<Pet>) dog);
 
      //   for(Family family : karleone.getAll(karleone)) {
        //     System.out.println(family.getFather().getName());
@@ -41,14 +42,14 @@ public class Main {
 
 
 
-            karleone.deleteChild(0);//delete child by index
+        //    karleone.deleteChild(0);//delete child by index
         // karleone.deleteChild(1);//delete child by index
          // karleone.deleteChild(fredo);//delete child by object
         //  karleone.deleteChild(connie);//delete child by object
         //System.out.println(karleone);
         //   System.out.println(karleone.countFamily());//count family  member(s)
         for(Family family : karleone.getAll(karleone)) {
-            System.out.println(family.getChildren());
+            System.out.println(family.getPet());
         }
     }
 }
