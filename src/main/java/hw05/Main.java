@@ -35,7 +35,7 @@ public class Main {
         karleone.addChild(michael);
         karleone.setPet(pet);
         System.out.println(karleone);//before deleteChild
-        karleone.deleteChild(0);
+        karleone.deleteChild(1);
         System.out.println(karleone.countFamily());
         System.out.println(karleone);
 
