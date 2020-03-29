@@ -35,9 +35,7 @@ public class Main {
       karleone.addChild(michael);
 
 
-        //   for(Family family : karleone.getAll(karleone)) {
-        //     System.out.println(family.getFather().getName());
-        //    }
+
 
 
         //   karleone.deleteChild(0);//delete child by index
