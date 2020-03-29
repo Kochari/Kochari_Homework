@@ -1,6 +1,5 @@
 package hw07;
 
-
 import java.util.Objects;
 
 public class Human {
@@ -152,39 +151,7 @@ public class Human {
                 '}';
     }
 }
-class Man extends Human implements HumanCreator{
-    public void  repairCar( boolean repairCar){
-        if (repairCar) {
-            System.out.println("Car was repaired");
-        } else {
-            System.out.println("Car does not repaired");
-        }
-    }
-    @Override
-    public void greetPet() {
-        super.greetPet();
-    }
 
 
-    @Override
-    public Human bornChild(Man childInterface) {
-
-return childInterface;
-    }
-}
-class Woman extends Human{
-public void makeup(boolean checkMakeup) {
-
-    if (checkMakeup) {
-        System.out.println("Woman already made up");
-    } else {
-        System.out.println("Woman does not make up");
-    }
-}
-    @Override
-    public void greetPet() {
-        super.greetPet();
-    }
-}
 
 

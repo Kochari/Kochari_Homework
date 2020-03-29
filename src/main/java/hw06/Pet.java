@@ -5,30 +5,25 @@ import java.util.Objects;
 
 public class Pet {
     public String nickname;
-    Pet pet;
-
     private Species species;
     private int age;
     private int trickLevel;
     private String habits[];
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Pet pet1 = (Pet) o;
-        return age == pet1.age &&
-                trickLevel == pet1.trickLevel &&
-                pet.equals(pet1.pet) &&
-                species.equals(pet1.species) &&
-                nickname.equals(pet1.nickname) &&
-                Arrays.equals(habits, pet1.habits);
+        Pet pet = (Pet) o;
+        return age == pet.age &&
+                trickLevel == pet.trickLevel &&
+                Objects.equals(nickname, pet.nickname) &&
+                species == pet.species &&
+                Arrays.equals(habits, pet.habits);
     }
-
     @Override
     public int hashCode() {
-        int result = Objects.hash(pet, species, nickname, age, trickLevel);
+        int result = Objects.hash(nickname, species, age, trickLevel);
         result = 31 * result + Arrays.hashCode(habits);
         return result;
     }
@@ -60,7 +55,7 @@ public class Pet {
     }
     public void greetPet() {
 
-        System.out.println("Hello" + pet.nickname);
+        System.out.println("Hello" + this.nickname);
     }
 
     public void eat() {

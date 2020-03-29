@@ -26,7 +26,7 @@ public class Main {
         Human connie = new Human("Connie", "Karleone", 1999);
         Human michael = new Human("Michael", "Karleone", 1998);
 
-        Pet dog = new Pet.Dog("Rock", 5, 99, habit);
+        Pet dog = new Dog("Rock", 5, 99, habit);
         fredo.setSchedule(schedule);
         Family karleone = new Family(father, mother, child);
         karleone.addChild(fredo);// add child
