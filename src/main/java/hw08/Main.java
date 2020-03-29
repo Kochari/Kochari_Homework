@@ -46,7 +46,6 @@ public class Main {
         //  karleone.deleteChild(connie);//delete child by object
         //System.out.println(karleone);
           System.out.println(karleone.countFamily());//count family  member(s)
-
         for (Family family : karleone.getAll(karleone)) {
             System.out.println(family.getAll(karleone));
         }

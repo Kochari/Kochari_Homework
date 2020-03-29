@@ -1,5 +1,7 @@
 package hw09;
 
+import hw09.DAO.FamilyDao;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -10,7 +12,8 @@ public class Family {
     private List<Human> children;
     private List<Pet> pets;
     private int index;
-
+    Family familyString;
+    FamilyDao familyDao=new FamilyDao();
     public Family(Human father, Human mother, List<Human> children, List<Pet> pets) {
         this.father = father;
         this.mother = mother;
@@ -31,7 +34,6 @@ public class Family {
     }
 
     public void addChild(Human child) {
-        //List<String> childrenList = new ArrayList<>();
         this.children.add(child);
     }
 
@@ -84,7 +86,7 @@ public class Family {
         this.children = children;
     }
 
-    public Collection<Family> getAll(Family familyString) {
+    public List<Family> getAllFamilies() {
         try {
             ArrayList<Family> familyObj = new ArrayList<Family>();
             familyObj.add(familyString);
@@ -105,4 +107,14 @@ public class Family {
     }
 
 
+    public String displayAllFamilies(int index) {
+            return getFamilyByIndex(index).toString();
+            // return getFamilyByIndex(index).represent();
+        }
+
+    private Family getFamilyByIndex(int index) {// public Flight getFlightsByID(int id) {
+                                                  //   return flightDao.getByID(id);
+    return familyDao.getFamilyByIndex(index);
+
+}
 }

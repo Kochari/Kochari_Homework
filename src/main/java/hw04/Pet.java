@@ -1,15 +1,13 @@
 package hw04;
 
 import java.util.Arrays;
-import java.util.Random;
-
 
 public class Pet {
 
     String species;
     String nickname;
     int age;
-    static int trickLevel;
+    int trickLevel;
     String habits[];
 
 
@@ -30,7 +28,6 @@ public class Pet {
     public Pet() {
     }
 
-
     public void eat() {
         System.out.println("I am eating");
     }
@@ -43,22 +40,6 @@ public class Pet {
         System.out.println("I need to cover it up");
     }
 
-    public boolean feedPet(boolean food) {
-        boolean feedFood = food;
-        Random random = new Random();
-        int rundomResult = random.nextInt(100 - 0) + 0;
-        if (trickLevel >= rundomResult) {
-            System.out.println("Hm... I will feed Jack's " + nickname);
-            feedFood = true;
-        } else {
-            System.out.println(Pet.trickLevel);
-            System.out.println("I think Jack is not hungry.");
-            feedFood = false;
-        }
-        return feedFood;
-    }
-
-
     public String toString() {
         return "Pet{" +
                 "species=" + species + '\'' +
@@ -68,6 +49,4 @@ public class Pet {
                 ", habits=" + Arrays.toString(habits) + '\'' +
                 '}';
     }
-
-
 }

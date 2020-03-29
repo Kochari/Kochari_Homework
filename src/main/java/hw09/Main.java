@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 
+
 public class Main {
     public static void main(String[] args) {
 
@@ -50,8 +51,8 @@ public class Main {
         //System.out.println(karleone);
           System.out.println(karleone.countFamily());//count family  member(s)
 
-        for (Family family : karleone.getAll(karleone)) {
-            System.out.println(family.getAll(karleone));
-        }
+//        for (Family family : karleone.getAllFamilies(karleone)) {
+//            System.out.println(family.getAllFamilies(karleone));
+//        }
     }
 }

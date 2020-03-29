@@ -1,5 +1,7 @@
 package hw04;
 
+import java.util.*;
+
 public class Human {
     String name;
     String surname;
@@ -9,7 +11,6 @@ public class Human {
     Human mother;
     Human father;
     String schedule[][];
-    Pet feeding = new Pet();
 
 
     public Human(String name, String surname, int year) {
@@ -43,11 +44,24 @@ public class Human {
         this.name = name;
         this.surname = surname;
     }
+
     public void greetPet() {
         System.out.println("Hello" + pet.nickname);
     }
+    public boolean feedPet(boolean food) {
+        boolean feedFood = food;
+        Random random = new Random();
+        int rundomResult =random.nextInt(100 - 0) + 0;
 
-
+        if (pet.trickLevel >= rundomResult) {
+            System.out.println("Hm... I will feed Jack's " + pet.nickname);
+            feedFood = true;
+        } else {
+            System.out.println("I think Jack is not hungry.");
+            feedFood = false;
+        }
+        return feedFood;
+    }
     public void describePet(int trickLevel, String species, int age) {
         if (trickLevel > 50) {
             System.out.println("I have a" + species + " he is" + age + " years old, he is" + "very sly");
@@ -67,6 +81,4 @@ public class Human {
                 ", pet=" + pet +
                 '}';
     }
-
-
 }

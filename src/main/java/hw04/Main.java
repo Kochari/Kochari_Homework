@@ -16,7 +16,8 @@ public class Main {
         System.out.println(son.toString());
         System.out.println(pet.toString());
         System.out.println(human.toString());
-        System.out.println(human.feeding.feedPet(false));
-        System.out.println(human.pet.trickLevel);
+        System.out.println(human.feedPet(true));
+
+
     }
 }
