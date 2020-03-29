@@ -6,10 +6,10 @@ public class Family {
     private Human mother;
     private Human father;
     private List<Human> children;
-    private List<Pet> pets;
+    private Set<Pet> pets;//Pet Set<Pet>
     private int index;
 
-    public Family(Human father, Human mother, List<Human> children, List<Pet> pets) {
+    public Family(Human father, Human mother, List<Human> children, Set<Pet> pets) {
         this.father = father;
         this.mother = mother;
         this.children = children;
@@ -25,7 +25,7 @@ public class Family {
         this.father = father;
         this.mother = mother;
         this.children = new ArrayList<Human>();
-        this.pets = new ArrayList<>();
+        this.pets = new HashSet<>();
     }
 
     public void addChild(Human child) {
@@ -66,7 +66,7 @@ public class Family {
         return father;
     }
 
-    public List<Pet> getPet() {
+    public Set<Pet> getPet() {
         return pets;
     }
 
