@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
         Woman mother = new Woman("Jane ", "Karleone",1970);
 
         Pet dog = new Dog("Rock", 5, 45);
-        hw08.Family family;
+        Family family;
 
         @BeforeEach
         void before() {
