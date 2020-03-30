@@ -1,20 +1,15 @@
 package hw09;
 
-import hw09.DAO.FamilyDao;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 public class Family {
     private Human mother;
     private Human father;
     private List<Human> children;
-    private List<Pet> pets;
+    private Set<Pet> pets;//Pet Set<Pet>
     private int index;
-    Family familyString;
-    FamilyDao familyDao=new FamilyDao();
-    public Family(Human father, Human mother, List<Human> children, List<Pet> pets) {
+
+    public Family(Human father, Human mother, List<Human> children, Set<Pet> pets) {
         this.father = father;
         this.mother = mother;
         this.children = children;
@@ -30,10 +25,11 @@ public class Family {
         this.father = father;
         this.mother = mother;
         this.children = new ArrayList<Human>();
-        this.pets = new ArrayList<>();
+        this.pets = new HashSet<>();
     }
 
     public void addChild(Human child) {
+        //List<String> childrenList = new ArrayList<>();
         this.children.add(child);
     }
 
@@ -70,7 +66,7 @@ public class Family {
         return father;
     }
 
-    public List<Pet> getPet() {
+    public Set<Pet> getPet() {
         return pets;
     }
 
@@ -86,7 +82,7 @@ public class Family {
         this.children = children;
     }
 
-    public List<Family> getAllFamilies() {
+    public Collection<Family> getAll(Family familyString) {
         try {
             ArrayList<Family> familyObj = new ArrayList<Family>();
             familyObj.add(familyString);
@@ -107,14 +103,4 @@ public class Family {
     }
 
 
-    public String displayAllFamilies(int index) {
-            return getFamilyByIndex(index).toString();
-            // return getFamilyByIndex(index).represent();
-        }
-
-    private Family getFamilyByIndex(int index) {// public Flight getFlightsByID(int id) {
-                                                  //   return flightDao.getByID(id);
-    return familyDao.getFamilyByIndex(index);
-
-}
 }

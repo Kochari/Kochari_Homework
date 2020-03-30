@@ -1,4 +1,4 @@
-package hw09.service;
+/*package hw09.service;
 
 import hw09.DAO.FamilyDao;
 import hw09.Family;
@@ -50,6 +50,6 @@ public void addPet(Pet pet) {
     this.pets.add(pet);
 }
 }
-
+*/
 
 

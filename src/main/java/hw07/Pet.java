@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Pet {
-    Species species;
+    private Species species;
     private String nickname;
     private int age;
     private int trickLevel;
@@ -84,8 +84,6 @@ public abstract class Pet {
     public String[] getHabits() {
         return habits;
     }
-
-
 
     protected abstract void setSpecies(Species dog);
 

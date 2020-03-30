@@ -10,7 +10,7 @@ public class Human {
     private int iq;
     private String schedule[][];
 
-    private Pet PetObj = new Pet();
+
 
 
     public Human(String name, String surname, int year) {
@@ -51,13 +51,12 @@ public class Human {
                 iq == human.iq &&
                 Objects.equals(name, human.name) &&
                 Objects.equals(surname, human.surname) &&
-                Arrays.equals(schedule, human.schedule) &&
-                Objects.equals(PetObj, human.PetObj);
+                Arrays.equals(schedule, human.schedule);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(name, surname, year, iq, PetObj);
+        int result = Objects.hash(name, surname, year, iq);
         result = 31 * result + Arrays.hashCode(schedule);
         return result;
     }
@@ -96,14 +95,6 @@ public class Human {
 
     public void setSchedule(String[][] schedule) {
         this.schedule = schedule;
-    }
-
-    public Pet getPetObj() {
-        return PetObj;
-    }
-
-    public void setPetObj(Pet petObj) {
-        PetObj = petObj;
     }
 
     @Override
