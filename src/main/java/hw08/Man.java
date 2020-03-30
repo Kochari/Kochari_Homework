@@ -4,7 +4,8 @@ package hw08;
 final class Man extends Human implements HumanCreator {
 
 
-
+    public Man(String vito_, String karleone, int i) {
+    }
 
     public void repairCar(boolean repairCar) {
         if (repairCar) {
