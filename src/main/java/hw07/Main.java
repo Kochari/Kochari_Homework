@@ -33,7 +33,7 @@ public class Main {
         karleone.addChild(connie);
         karleone.addChild(michael);
         karleone.setPet(dog);
-        System.out.println(karleone);
+       // System.out.println(karleone);
         karleone.deleteChild(0);//delete child by index
         karleone.deleteChild(1);//delete child by index
         //  karleone.deleteChild(fredo);//delete child by object

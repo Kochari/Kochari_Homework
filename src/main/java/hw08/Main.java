@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Map<DayOfWeek, String> schedule = new HashMap<DayOfWeek, String>();
-       schedule.put(DayOfWeek.Monday, "go to courses");
+        schedule.put(DayOfWeek.Monday, "go to courses");
         schedule.put(DayOfWeek.Tuesday, "watch a film");
         schedule.put(DayOfWeek.Wednesday, "go for a walk");
         schedule.put(DayOfWeek.Thursday, "meet with friends");
@@ -31,19 +31,17 @@ public class Main {
         Family karleone = new Family(father, mother);
         karleone.addPet(dog);
 
-      karleone.addChild(connie);
-      karleone.addChild(michael);
+        karleone.addChild(connie);
+        karleone.addChild(michael);
+        karleone.addChild(fredo);
 
 
-
-
-
-        //   karleone.deleteChild(0);//delete child by index
-        // karleone.deleteChild(1);//delete child by index
-        // karleone.deleteChild(fredo);//delete child by object
+        karleone.deleteChild(0);//delete child by index
+        // karleone.deleteChild(0);//delete child by index
+       karleone.deleteChild(fredo);//delete child by object
         //  karleone.deleteChild(connie);//delete child by object
         //System.out.println(karleone);
-          System.out.println(karleone.countFamily());//count family  member(s)
+        System.out.println(karleone.countFamily());//count family  member(s)
         for (Family family : karleone.getAll(karleone)) {
             System.out.println(family.getAll(karleone));
         }

@@ -15,6 +15,7 @@ public class Family {
         this.pet = pet;
     }
 
+
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Family class was deleted");
@@ -44,7 +45,6 @@ public class Family {
     public boolean deleteChild(int index1) {
         if (index1 >= children.length) {
             System.out.println("index1>=child.lengh");
-
             return false;
         } else
             for (int i = index1; i < children.length-1; i++) {
@@ -82,7 +82,7 @@ public class Family {
     }
 
     public int countFamily () {
-        return 1 + index;
+        return this.getChildren().length+1+1;
     }
     public Human getFather() {
         return father;
@@ -90,6 +90,14 @@ public class Family {
 
     public void setFather(Human father) {
         this.father = father;
+    }
+
+    public Human getMother() {
+        return mother;
+    }
+
+    public void setMother(Human mother) {
+        this.mother = mother;
     }
 
     public Human[] getChildren() {

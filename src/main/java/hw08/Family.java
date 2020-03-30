@@ -16,6 +16,10 @@ public class Family {
         this.pets = pets;
     }
 
+    public Family() {
+
+    }
+
     @Override
     protected void finalize() throws Throwable {
         System.out.println("successfully garbage collected");
@@ -59,7 +63,7 @@ public class Family {
     }
 
     public int countFamily() {
-        return 1 + index;
+        return this.getChildren().size()+1+1;
     }
 
     public Human getFather() {
