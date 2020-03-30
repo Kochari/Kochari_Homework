@@ -32,9 +32,10 @@ public class Family {
         this.pets = new HashSet<>();
     }
 
-    public void addChild(Human child) {
+    public boolean addChild(Human child) {
         //List<String> childrenList = new ArrayList<>();
         this.children.add(child);
+        return true;
     }
 
     public void addPet(Pet pet) {

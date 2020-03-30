@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Map<DayOfWeek, String> schedule = new HashMap<DayOfWeek, String>();
-        schedule.put(DayOfWeek.Monday, "go to courses");
+        schedule.put(DayOfWeek.Monday, "go to course");
         schedule.put(DayOfWeek.Tuesday, "watch a film");
         schedule.put(DayOfWeek.Wednesday, "go for a walk");
         schedule.put(DayOfWeek.Thursday, "meet with friends");
