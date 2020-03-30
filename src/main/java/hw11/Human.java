@@ -1,14 +1,13 @@
-package hw10;
+package hw11;
 
 
-
-import java.util.Map;
-import java.util.Objects;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
+import java.util.Objects;
 
 public class Human {
     private String name;
@@ -35,7 +34,7 @@ public class Human {
         this.mother = mother;
     }
 
-    public Human(String name, String surname,long birthDate, int iq, Human father,Human mother, Pet pet) {
+    public Human(String name, String surname, long birthDate, int iq, Human father, Human mother, Pet pet) {
         this.name = name;
         this.surname = surname;
         this.birthDate = birthDate;
@@ -62,10 +61,6 @@ public class Human {
     public void greetPet() {
 
         System.out.println("Hello" + getPet().getNickname());
-    }
-
-    private Pet getPet() {
-        return pet;
     }
 
     @Override
@@ -139,6 +134,9 @@ public class Human {
         this.iq = iq;
     }
 
+    public Pet getPet() {
+        return pet;
+    }
 
     public void setPet(Pet pet) {
         this.pet = pet;

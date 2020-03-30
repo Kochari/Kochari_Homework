@@ -54,7 +54,7 @@ public abstract class Pet {
         }
     }
 
-    abstract void respond(String nickname);
+    public abstract void respond(String nickname);
 
     public void foul() {
         System.out.println("I need to cover it up");

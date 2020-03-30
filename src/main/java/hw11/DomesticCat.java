@@ -1,4 +1,5 @@
-package hw09;
+package hw11;
+
 
 import java.util.Set;
 
@@ -13,7 +14,7 @@ public class DomesticCat extends Pet {
     }
 
     @Override
-    public void respond(String nickname) {
+    void respond(String nickname) {
         System.out.printf("Hello, owner. I am %s and I need more sleep ", nickname);
     }
 

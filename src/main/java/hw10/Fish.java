@@ -1,7 +1,7 @@
 package hw10;
 
-import hw09.Pet;
-import hw09.Species;
+
+
 
 import java.util.Set;
 

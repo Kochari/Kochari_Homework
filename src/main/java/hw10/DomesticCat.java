@@ -1,11 +1,8 @@
 package hw10;
 
-import hw09.Pet;
-import hw09.Species;
-
 import java.util.Set;
 
-public class DomesticCat extends Pet {
+public class  DomesticCat extends Pet {
 
     public DomesticCat(String nickname, int age, int trickLevel, Set habit) {
         super(nickname, age, trickLevel, habit);

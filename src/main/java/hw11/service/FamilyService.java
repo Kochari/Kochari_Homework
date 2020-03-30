@@ -1,13 +1,12 @@
-package hw10.service;
+package hw11.service;
 
+
+import hw11.*;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
-import hw10.*;
-import hw10.DAO.FamilyDao;
 
 public class FamilyService {
     FamilyDao familyDao = new FamilyDao();
@@ -62,8 +61,8 @@ public class FamilyService {
                     "Griffin", LocalDate.now().getYear(),
                     (family.getMother().getIq() + family.getFather().getIq()) / 2);
         } else if (gender.equals("feminine")) {
-            newlyBornChild = new hw10.Woman(
-                    hw10.Util.getChildName(false),
+            newlyBornChild = new Woman(
+                    Util.getChildName(false),
                     "Griffin", LocalDate.now().getYear(),
                     (family.getMother().getIq() + family.getFather().getIq()) / 2);
         }

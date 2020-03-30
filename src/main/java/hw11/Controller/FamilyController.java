@@ -1,10 +1,8 @@
-package hw10.Controller;
+package hw11.Controller;
 
 
-
-
-import hw10.*;
-import hw10.service.FamilyService;
+import hw11.*;
+import hw11.service.FamilyService;
 
 import java.util.List;
 import java.util.Set;
@@ -69,6 +67,6 @@ public class FamilyController {
     }
 
     public void addPet(int index, Pet pet) {
-                                        familyService.addPet(index, pet);
+        familyService.addPet(index, pet);
     }
 }

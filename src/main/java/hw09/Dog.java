@@ -15,7 +15,7 @@ public class Dog extends Pet {
     }
 
     @Override
-    void respond(String nickname) {
+    public void respond(String nickname) {
         System.out.printf("Hello, owner. I am %s and I do wooff ", nickname);
     }
 

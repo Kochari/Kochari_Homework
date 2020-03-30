@@ -1,7 +1,7 @@
-package hw10.DAO;
+package hw11;
 
 
-import hw10.Family;
+import hw11.DAO.CollectionFamilyDao;
 
 import java.util.LinkedList;
 import java.util.List;
