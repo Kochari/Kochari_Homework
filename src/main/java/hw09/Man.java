@@ -3,7 +3,7 @@ package hw09;
 
 import hw08.HumanCreator;
 
-/*final class Man extends Human implements HumanCreator {
+public final class Man extends Human  {
     public void repairCar(boolean repairCar) {
         if (repairCar) {
             System.out.println("Car was repaired");
@@ -18,10 +18,7 @@ import hw08.HumanCreator;
     }
 
 
-    @Override
-    public Human bornChild(Man childInterface) {
 
-        return childInterface;
-    }
+
+
 }
-*/

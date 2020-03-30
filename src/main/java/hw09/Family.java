@@ -1,12 +1,15 @@
 package hw09;
 
+import hw08.Human;
+import hw08.Pet;
+
 import java.util.*;
 
 public class Family {
     private Human mother;
     private Human father;
     private List<Human> children;
-    private Set<Pet> pets;//Pet Set<Pet>
+    private Set<Pet> pets;
     private int index;
 
     public Family(Human father, Human mother, List<Human> children, Set<Pet> pets) {
@@ -14,6 +17,10 @@ public class Family {
         this.mother = mother;
         this.children = children;
         this.pets = pets;
+    }
+
+    public Family(Woman mother, Man father) {
+
     }
 
     @Override
@@ -29,9 +36,9 @@ public class Family {
     }
 
     public void addChild(Human child) {
-        //List<String> childrenList = new ArrayList<>();
         this.children.add(child);
     }
+
 
     public void addPet(Pet pet) {
         this.pets.add(pet);
@@ -66,7 +73,7 @@ public class Family {
         return father;
     }
 
-    public Set<Pet> getPet() {
+    public Set<Pet> getPets() {
         return pets;
     }
 
@@ -82,7 +89,7 @@ public class Family {
         this.children = children;
     }
 
-    public Collection<Family> getAll(Family familyString) {
+    public List<Family> getAllFamilies(Family familyString) {
         try {
             ArrayList<Family> familyObj = new ArrayList<Family>();
             familyObj.add(familyString);
@@ -103,4 +110,7 @@ public class Family {
     }
 
 
+    public Human getMother() {
+        return mother;
+    }
 }

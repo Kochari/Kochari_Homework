@@ -1,15 +1,20 @@
 package hw09.DAO;
 
 import hw09.Family;
+import hw09.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FamilyDao<F> implements CollectionFamilyDao{
     List<Family> family = new ArrayList<>();
+    List<Pet> pet = new ArrayList<>();
 
     public List<Family> getAllFamilies() {
         return family;
+    }
+    public List<Pet> getPets(){
+        return pet;
     }
 
     public Family getFamilyByIndex(int index){
@@ -38,8 +43,10 @@ public class FamilyDao<F> implements CollectionFamilyDao{
         }
         return false;
     }
-    public  void  saveFamily(Family saveFamily){
+    public Family saveFamily(Family saveFamily){
         this.family.add(saveFamily);
+
+        return saveFamily;
     }
 
     @Override

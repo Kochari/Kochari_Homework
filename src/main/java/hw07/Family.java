@@ -20,7 +20,7 @@ public class Family {
         System.out.println("Family class was deleted");
     }
 
-    hw05.Family family;
+
     public Family(Human father, Human mother, Pet pet) {
         this.father = father;
         this.mother = mother;

@@ -1,7 +1,7 @@
 package hw09;
 
 
-final class Woman extends Human {
+public final class Woman extends Human {
     public void makeup(boolean checkMakeup) {
 
         if (checkMakeup) {
