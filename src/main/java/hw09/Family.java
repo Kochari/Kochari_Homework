@@ -19,9 +19,6 @@ public class Family {
         this.pets = pets;
     }
 
-    public Family(Woman mother, Man father) {
-
-    }
 
     @Override
     protected void finalize() throws Throwable {
