@@ -1,8 +1,11 @@
-package hw08;
+package hw10;
 
 
-final class Man extends Human implements HumanCreator {
+public final class Man extends Human  {
 
+    public Man(String name, String surname, long birthDate, int iq) {
+        super(name, surname, birthDate, iq);
+    }
 
 
 
@@ -20,9 +23,7 @@ final class Man extends Human implements HumanCreator {
     }
 
 
-    @Override
-    public Human bornChild(Man childInterface) {
 
-        return childInterface;
-    }
+
+
 }

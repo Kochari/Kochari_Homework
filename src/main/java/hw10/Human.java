@@ -1,13 +1,18 @@
-package hw09;
+package hw10;
+
+
 
 import java.util.Map;
 import java.util.Objects;
-
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 public class Human {
-
     private String name;
     private String surname;
-    private int year;
+    private long birthDate;
     private int iq;
     private Pet pet;
     private Map schedule;
@@ -15,30 +20,44 @@ public class Human {
     private Human father;
 
 
-    public Human(String name, String surname, int year) {
+    public Human(String name, String surname, long birthDate) {
         this.name = name;
         this.surname = surname;
-        this.year = year;
+        this.birthDate = birthDate;
     }
 
-    public Human(String name, String surname, int year, Human father, Human mother) {
+    public Human(String name, String surname, long birthDate, Human father, Human mother) {
         this.name = name;
         this.surname = surname;
-        this.year = year;
+        this.birthDate = birthDate;
         this.father = father;
         this.mother = mother;
     }
 
-    public Human(String name, String surname, int year, int iq, Human father, Human mother, Pet pet) {
+    public Human(String name, String surname,long birthDate, int iq, Human father,Human mother, Pet pet) {
         this.name = name;
         this.surname = surname;
-        this.year = year;
+        this.birthDate = birthDate;
         this.iq = iq;
         this.father = father;
         this.mother = mother;
         this.pet = pet;
     }
 
+    public Human(String name, String surname, long birthDate, int iq) {
+        this.name = name;
+        this.surname = surname;
+        this.birthDate = birthDate;
+        this.iq = iq;
+    }
+
+    public String describeAge() {
+        LocalDate localDate = Instant.ofEpochMilli(birthDate)
+                .atZone(ZoneId.systemDefault()).toLocalDate();
+        Period period = Period.between(localDate, LocalDate.now());
+        return String.format("years: %d, months: %d, days: %d",
+                period.getYears(), period.getMonths(), period.getDays());
+    }
     public void greetPet() {
 
         System.out.println("Hello" + getPet().getNickname());
@@ -49,7 +68,7 @@ public class Human {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Human human = (Human) o;
-        return year == human.year &&
+        return birthDate == human.birthDate &&
                 iq == human.iq &&
                 Objects.equals(name, human.name) &&
                 Objects.equals(surname, human.surname) &&
@@ -60,7 +79,7 @@ public class Human {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, year, iq, pet, mother, father);
+        return Objects.hash(name, surname, birthDate, iq, pet, mother, father);
     }
 
     public Human() {
@@ -96,19 +115,19 @@ public class Human {
         this.surname = surname;
     }
 
-    public int getYear() {
-        return year;
+    public long getYear() {
+        return birthDate;
     }
 
-    public void setYear(int year) {
-        this.year = year;
+    public void setYear(int birthDate) {
+        this.birthDate = birthDate;
     }
 
     public int getIq() {
         return iq;
     }
-    public int getAge() {
-        return year;
+    public long getAge() {
+        return LocalDate.now().getYear() - LocalDate.ofEpochDay(birthDate).getYear();
     }
 
     public void setIq(int iq) {
@@ -144,17 +163,15 @@ public class Human {
         this.schedule = schedule;
     }
 
-    @Override
     public String toString() {
-
+        final String formattedBirthDate = LocalDate.ofEpochDay(birthDate)
+                .format(DateTimeFormatter
+                        .ofPattern("dd/MM/yyyy"));
         return "Human{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", year=" + year +
+                ", birthDate=" + formattedBirthDate +
                 ", iq=" + iq +
-                ", pet=" + pet +
-                ", mother=" + mother +
-                ", father=" + father +
                 '}';
     }
 }
