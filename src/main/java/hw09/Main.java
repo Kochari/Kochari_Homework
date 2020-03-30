@@ -1,5 +1,7 @@
 package hw09;
 
+import hw09.Controller.FamilyController;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -8,7 +10,7 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-
+        FamilyController familyController = new FamilyController();
         Map<DayOfWeek, String> schedule = new HashMap<DayOfWeek, String>();
         schedule.put(DayOfWeek.Monday, "go to courses");
         schedule.put(DayOfWeek.Tuesday, "watch a film");
@@ -23,29 +25,28 @@ public class Main {
         habit.add("eat");
         habit.add("drink");
         habit.add("sleep");
-        Human father = new Human("Vito ", "Karleone");
-        Human mother = new Human("Jane ", "Karleone");
-        Human fredo = new Human("Fredo", "Karleone", 1996);
-        Human connie = new Human("Connie", "Karleone", 1999);
-        Human michael = new Human("Michael", "Karleone", 1998);
+        Woman  mother= new Woman("Jane ", "Karleone",1970);
+        Man  father= new Man("Vito ", "Karleone",1968);
 
+        Human child = new Human("Connie", "Karleone", 1999);
         Pet dog = new Dog("Rock", 5, 45, habit);
-        fredo.setSchedule(schedule);
-        Family karleone = new Family(father, mother);
-        karleone.addPet(dog);
-
-        karleone.addChild(connie);
-        karleone.addChild(michael);
 
 
-        //   karleone.deleteChild(0);//delete child by index
-        // karleone.deleteChild(1);//delete child by index
-        // karleone.deleteChild(fredo);//delete child by object
-        //  karleone.deleteChild(connie);//delete child by object
-        //System.out.println(karleone);
-        System.out.println(karleone.countFamily());//count family  member(s)
-        for (Family family : karleone.getAllFamilies(karleone)) {
-            System.out.println(family.getAllFamilies(karleone));
-        }
+
+        familyController.createNewFamily(mother, father);
+        familyController.adoptChild(familyController.getFamilyById(1), child);
+        familyController.bornChild(familyController.getFamilyById(1), "feminine");
+        familyController.addPet(0, dog);
+        Woman mother2 = new Woman("Bonnie", "Griffin", 1960);
+        Man father2 = new Man("Joe", "Swanson", 1961);
+        Human child2 = new Human("Kevin", "Swanson", 1991);
+        Pet domesticCat = new DomesticCat("Garfield", 11, 71);
+
+        familyController.createNewFamily(mother2, father2);
+        familyController.adoptChild(familyController.getFamilyById(2), child2);
+        familyController.bornChild(familyController.getFamilyById(2), "masculine");
+        familyController.addPet(1, domesticCat);
+
+        familyController.displayAllFamilies();
     }
-}
+    }

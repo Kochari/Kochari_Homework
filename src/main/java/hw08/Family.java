@@ -71,9 +71,10 @@ public class Family {
         return father;
     }
 
-    public Set<Pet> getPet() {
+    public Set<Pet> getPets() {
         return pets;
     }
+
 
     public void setFather(Human father) {
         this.father = father;
@@ -106,6 +107,4 @@ public class Family {
                 ", pet=" + pets +
                 '}';
     }
-
-
 }

@@ -2,6 +2,11 @@ package hw08;
 
 
 final class Woman extends Human {
+
+
+    public Woman(String vito_, String karleone, int i) {
+    }
+
     public void makeup(boolean checkMakeup) {
 
         if (checkMakeup) {

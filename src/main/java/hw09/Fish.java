@@ -3,6 +3,7 @@ package hw09;
 import java.util.Set;
 
 public class Fish extends Pet {
+
     public Fish(String nickname, int age, int trickLevel, Set habit) {
         super(nickname, age, trickLevel, habit);
         this.setSpecies(Species.FISH);

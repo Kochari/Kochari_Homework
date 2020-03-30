@@ -2,6 +2,8 @@ package hw08;
 
 
 final class Man extends Human implements HumanCreator {
+
+
     public void repairCar(boolean repairCar) {
         if (repairCar) {
             System.out.println("Car was repaired");

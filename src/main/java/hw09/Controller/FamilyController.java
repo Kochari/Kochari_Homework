@@ -1,44 +1,72 @@
 package hw09.Controller;
 
-import hw09.Family;
-import hw09.Man;
-import hw09.Pet;
-import hw09.Woman;
+import hw09.*;
+import hw09.service.FamilyService;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class FamilyController {
-    FamilyController familyController = new FamilyController();
+    private final FamilyService familyService;
 
-    public List<Family> getFamilyById(int id) {
-        return familyController.getFamilyById(id);
-    }
-
-    public void displayAllFamilies() {
-        familyController.displayAllFamilies();
+    public FamilyController() {
+        this.familyService = new FamilyService();
     }
 
     public List<Family> getAllFamilies() {
-        return familyController.getAllFamilies();
+        return familyService.getAllFamilies();
+    }
+
+    public void displayAllFamilies() {
+        familyService.displayAllFamilies();
+    }
+
+    public void getFamiliesMoreThan(int size) {
+        familyService.getFamiliesMoreThan(size);
+    }
+
+    public void getFamiliesLessThan(int size) {
+        familyService.getFamiliesLessThan(size);
+    }
+
+    public void countFamiliesWithMemberCount(int memberCount) {
+        familyService.countFamiliesWithMemberCount(memberCount);
+    }
+
+    public void createNewFamily(Woman mother, Man father) {
+        familyService.createNewFamily(father, mother);
     }
 
     public void deleteFamilyByIndex(int index) {
-        familyController.deleteFamilyByIndex(index);
+        familyService.deleteFamilyByIndex(index);
+    }
+
+    public void bornChild(Family family, String gender) {
+        familyService.bornChild(family, gender);
+    }
+
+    public void adoptChild(Family family, Human human) {
+        familyService.adoptChild(family, human);
+    }
+
+    public void deleteAllChildrenOlderThen(int age) {
+        familyService.deleteAllChildrenOlderThan(age);
     }
 
     public int count() {
-        return familyController.count();
+        return familyService.count();
     }
 
-    public void addPet(Pet pet) {
-        familyController.addPet(pet);
+    public Family getFamilyById(int id) {
+        return familyService.getFamilyById(id);
     }
 
-    public List<Pet> getPets() {
-        return familyController.getPets();
+    public Set<Pet> getPets(int index) {
+        return familyService.getPets(index);
     }
 
-    public Family createNewFamily(Man father, Woman mother) {
-        return familyController.createNewFamily(father, mother);
+    public void addPet(int index, Pet pet) {
+                                        familyService.addPet(index, pet);
     }
 }

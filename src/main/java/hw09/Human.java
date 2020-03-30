@@ -72,7 +72,7 @@ public class Human {
 
     @Override
     protected void finalize() throws Throwable {
-        System.out.println("successfully garbage collected");
+        System.out.println("Finalizing done in Human class");
     }
 
     public String getName() {
@@ -105,6 +105,9 @@ public class Human {
 
     public int getIq() {
         return iq;
+    }
+    public int getAge() {
+        return year;
     }
 
     public void setIq(int iq) {

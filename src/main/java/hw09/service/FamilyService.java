@@ -5,16 +5,16 @@ import hw09.DAO.FamilyDao;
 
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import hw09.Family;
 
 public class FamilyService {
     FamilyDao familyDao = new FamilyDao();
-    List<Family> family = new ArrayList<>();
-    List<Pet> pets;
+
+
 
     public List<Family> getAllFamilies() {
         return familyDao.getAllFamilies();
@@ -103,21 +103,19 @@ public class FamilyService {
                 .size();
     }
 
-    public ArrayList<Pet> getPets(int index) {
+    public Set<Pet> getPets(int index) {
         return familyDao
                 .getAllFamilies()
                 .get(index).getPets();
     }
+
+
 
     public void addPet(int index, Pet pet) {
         familyDao.getAllFamilies()
                 .get(index)
                 .getPets()
                 .add(pet);
-    }
-
-    public void addPet(Pet pet) {
-        this.pets.add(pet);
     }
 
 }

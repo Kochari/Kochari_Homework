@@ -19,6 +19,9 @@ public class Family {
         this.pets = pets;
     }
 
+    public Family(Woman mother, Man father) {
+    }
+
 
     @Override
     protected void finalize() throws Throwable {
@@ -32,8 +35,9 @@ public class Family {
         this.pets = new HashSet<>();
     }
 
-    public void addChild(Human child) {
+    public boolean addChild(Human child) {
         this.children.add(child);
+        return true;
     }
 
 

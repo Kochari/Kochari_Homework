@@ -1,59 +1,41 @@
 package hw09.DAO;
 
 import hw09.Family;
-import hw09.Pet;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
-public class FamilyDao<F> implements CollectionFamilyDao {
-    List<Family> family = new ArrayList<>();
-    List<Pet> pet = new ArrayList<>();
 
-    public List<Family> getAllFamilies() {
-        return family;
-    }
+    public class FamilyDao implements CollectionFamilyDao<Family> {
 
-    public List<Pet> getPets() {
-        return pet;
-    }
+        List<Family> families = new LinkedList<>();
 
-    public Family getFamilyByIndex(int index) {
-        if (index >= family.size()) {
-            return null;
-        } else {
-            return this.family.get(index - 1);
+        @Override
+        public List<Family> getAllFamilies() {
+            return families;
+        }
+
+        @Override
+        public Optional<Family> getFamilyByIndex(int index) {
+            return Optional.ofNullable(families.get(index));
+        }
+
+        @Override
+        public boolean deleteFamily(Family family) {
+            return families.remove(family);
+        }
+
+        @Override
+        public boolean deleteFamily(int index) {
+            return families.remove(families.get(index));
+        }
+
+        @Override
+        public Family saveFamily(Family family) {
+            families.add(family);
+            return family;
         }
     }
 
-    public boolean deleteFamily(int index) {
-        if (index >= family.size()) {
-            return false;
-        } else
-            family.remove(index);
-        return true;
-    }
 
-    public boolean deleteFamily(Family deleteFamily) {
-        try {
-            if (family.contains(deleteFamily)) {
-                family.remove(deleteFamily);
-                return true;
-            }
-        } catch (Exception e) {
-            System.out.println("Oops, you don't have such a family. try again!");
-        }
-        return false;
-    }
-
-    public Family saveFamily(Family saveFamily) {
-        this.family.add(saveFamily);
-
-        return saveFamily;
-    }
-
-    @Override
-    public List getAll() {
-        return null;
-    }
-}
